@@ -1,8 +1,8 @@
-import React, { useRef, useState } from "react";
+import React, { useRef} from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../App.css";
 
-function Body() {
+function Home() {
   const FileInputRef = useRef();
   const on_upload_click = () => {
     FileInputRef.current.click();
@@ -19,10 +19,18 @@ function Body() {
             Upload
           </button>
           <input type="file" ref={FileInputRef} style={{ display: "none" }} />
+          
         </div>
       </div>
+      <h1>hello</h1>
+      <h1>hello</h1>
+      <h1>hello</h1>
+      <h1>hello</h1>
+      <h1>hello</h1>
+      <h1>hello</h1>
+      <h1>hello</h1>
     </>
   );
 }
 
-export default Body;
+export default Home;

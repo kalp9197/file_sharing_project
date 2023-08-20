@@ -6,11 +6,15 @@ body{
     height: 0px;
     overflow-x: hidden;  
 }
-.main-navbar{
+
+
+.main_nav {
     background-color: rgba(255, 255, 255, 0.4);
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
-}
+
+  }
+  
 
 .main-container{
     border-radius:2%;
@@ -23,13 +27,14 @@ img{
     height: 100vh;
 }
 .text_lbl{
-    top: 0;
+    top:0;
+    margin-top: 60px;
     margin-left:40%;
     position: absolute;
 }
 .upload_btn{
-    margin-top: 130%;
-    margin-left: 26%;
+    margin-top: 100%;
+    margin-left: 25%;
     position: absolute;
     width: 150px;
     height: 150px;
