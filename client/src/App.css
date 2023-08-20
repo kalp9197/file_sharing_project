@@ -4,7 +4,6 @@
 body{
     width: 0px;
     height: 0px;
-     /* overflow-y: hidden;  */
     overflow-x: hidden;  
 }
 .main-navbar{
@@ -14,7 +13,6 @@ body{
 }
 
 .main-container{
-    /* background-color: #d4f1f1; */
     border-radius:2%;
     position: relative;
     height: 100vh;
@@ -39,7 +37,6 @@ img{
 }
 .upload_btn:hover{
     transform: rotate(360deg);
-    /* transform: translate(1.2); */
     transition-duration: 1500ms;
     transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
     background-color: aliceblue;
