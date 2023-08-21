@@ -1,12 +1,26 @@
-import React, { useRef} from "react";
+import React, { useEffect, useRef,useState} from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../App.css";
+import {uploadFile} from "../services/api";
 
 function Home() {
+  const [file,setFile]=useState("")
   const FileInputRef = useRef();
   const on_upload_click = () => {
     FileInputRef.current.click();
   };
+  useEffect(()=>{
+    const getImage=async()=>{
+    if (file){
+      const data=new FormData()
+      data.append("name",file.name)
+      data.append("file",file)
+
+     let response = await uploadFile(data)
+    }
+  }
+  getImage()
+  },[file])
   return (
     <>
       <div className="main-container">
@@ -18,17 +32,12 @@ function Home() {
         <button onClick={() => on_upload_click()} className="upload_btn">
             Upload
           </button>
-          <input type="file" ref={FileInputRef} style={{ display: "none" }} />
+          <input type="file" ref={FileInputRef} style={{ display: "none" }} 
+            onChange={(e)=>setFile(e.target.files[0])}
+          />
           
         </div>
       </div>
-      <h1>hello</h1>
-      <h1>hello</h1>
-      <h1>hello</h1>
-      <h1>hello</h1>
-      <h1>hello</h1>
-      <h1>hello</h1>
-      <h1>hello</h1>
     </>
   );
 }
