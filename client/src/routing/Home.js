@@ -5,6 +5,7 @@ import {uploadFile} from "../services/api";
 
 function Home() {
   const [file,setFile]=useState("")
+  const [result,setResult]=useState("")
   const FileInputRef = useRef();
   const on_upload_click = () => {
     FileInputRef.current.click();
@@ -17,6 +18,7 @@ function Home() {
       data.append("file",file)
 
      let response = await uploadFile(data)
+     setResult(response.path)
     }
   }
   getImage()
@@ -35,6 +37,7 @@ function Home() {
           <input type="file" ref={FileInputRef} style={{ display: "none" }} 
             onChange={(e)=>setFile(e.target.files[0])}
           />
+          <a href={result}>{result}</a>
           
         </div>
       </div>
