@@ -8,10 +8,18 @@ import "../App.css";
 
 function Header() {
   return (
+<<<<<<< HEAD
+    <>
+    <div className="main-route">
+      <Router>
+        <Navbar expand="lg" className="main_nav sticky-top">
+          <Navbar.Brand as={Link} to="/">Transfer-X</Navbar.Brand>
+=======
     <div className="main-route">
       <Router>
         <Navbar expand="lg" className="main_nav fixed-top">
           <Navbar.Brand as={Link} to="/">Your Brand</Navbar.Brand>
+>>>>>>> 6d1c1cf80c7406f8561c8a4ad6f833156d1c01e8
           <Navbar.Toggle aria-controls="basic-navbar-nav"/>
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
@@ -30,6 +38,10 @@ function Header() {
         </div>
       </Router>
     </div>
+<<<<<<< HEAD
+    </>
+=======
+>>>>>>> 6d1c1cf80c7406f8561c8a4ad6f833156d1c01e8
   );
 }
 
