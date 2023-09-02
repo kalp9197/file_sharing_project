@@ -16,28 +16,12 @@ function Contact() {
     });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-
-    try {
-      const response = await fetch('/api/sendEmail', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        console.log('Email sent successfully!');
-      } else {
-        console.error('Error sending email.');
-      }
-    } catch (error) {
-      console.error('Error:', error);
-    }
+    
+    // You can handle form submission logic here
+    console.log('Form data submitted:', formData);
   };
-
 
   return (
     <div className="container mt-5 text-dark">
