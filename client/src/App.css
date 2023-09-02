@@ -34,3 +34,21 @@
     display: flex;
     justify-content: center;
 }
+
+.card{
+    background-color: black;
+    border-radius: 10px;
+    padding: 35px;
+    margin-bottom: 40px;
+    margin-right: 10px;
+    margin-left: 50px;
+    transition: all 0.4s ease-in-out;
+    transition-delay: 50ms;
+    
+  }
+
+  .card:hover {
+    background-color: rgb(226, 240, 252);
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    cursor: pointer;
+  }
