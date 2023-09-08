@@ -6,10 +6,13 @@ import { uploadFile } from "../services/api";
 function Home() {
   const [file, setFile] = useState("");
   const [result, setResult] = useState("");
+  const [showDownloadLink, setShowDownloadLink] = useState(false); // State to control the visibility of the download link
   const FileInputRef = useRef();
+
   const on_upload_click = () => {
     FileInputRef.current.click();
   };
+
   useEffect(() => {
     const getImage = async () => {
       if (file) {
@@ -19,10 +22,12 @@ function Home() {
 
         let response = await uploadFile(data);
         setResult(response.path);
+        setShowDownloadLink(true);
       }
     };
     getImage();
   }, [file]);
+
   return (
     <>
       <div className="main-container pt-2 pb-5">
@@ -44,14 +49,15 @@ function Home() {
         </div>
       </div>
 
-    <div className="bg-dark text-white text-center">
-        <h3>
-          Your Download Link Is Generated Here
-        </h3>
-        <a className="download_link" href={result}>
-          {result}
-        </a>
-      </div>
+      {showDownloadLink && (
+        <div className="bg-dark text-white text-center">
+          <h3>Your Download Link Is Generated Here</h3>
+          <a className="download_link" href={result}>
+            {result}
+          </a>
+        </div>
+      )}
+
       <h2 className="pt-5 text-center pb-4">Steps For Easy Share Files </h2>
       <div className="container">
         <div className="row">
@@ -63,7 +69,7 @@ function Home() {
               <div className="card-header">Step-1</div>
               <div className="card-body">
                 <p className="card-text">
-                  Firstly Click on upload Button and select the file your want.
+                  Firstly Click on upload Button and select the file you want.
                 </p>
               </div>
             </div>
@@ -76,7 +82,7 @@ function Home() {
               <div className="card-header">Step-2</div>
               <div className="card-body">
                 <p className="card-text">
-                  After Uploading the File the Link will be generated.
+                  After Uploading the File, the Link will be generated.
                 </p>
               </div>
             </div>
@@ -89,7 +95,7 @@ function Home() {
               <div className="card-header">Step-3</div>
               <div className="card-body">
                 <p className="card-text">
-                  Just Copy the link and send this to anyone You Want.
+                  Just Copy the link and send this to anyone you want.
                 </p>
               </div>
             </div>

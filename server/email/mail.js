@@ -13,7 +13,7 @@ const transporter = nodemailer.createTransport({
 function sendEmail(formData) {
   const mailOptions = {
     from: 'your_email@gmail.com',
-    to: 'pkalpextra61@gmail.com,receiver2@gmail.com',
+    to: 'pkalp61@gmail.com',
     subject: 'Feedback Form Submission',
     text: `Name: ${formData.name}\nEmail: ${formData.email}\nQuery: ${formData.query}\nRating: ${formData.rating}`,
   };

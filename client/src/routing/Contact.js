@@ -16,17 +16,10 @@ function Contact() {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    
-    // You can handle form submission logic here
-    console.log('Form data submitted:', formData);
-  };
-
   return (
     <div className="container mt-5 text-dark">
       <h2>Feedback Form</h2>
-      <form onSubmit={handleSubmit}>
+      <form action='/onformsubmit' method='post'>
         <div className="form-group">
           <label htmlFor="name">Name:</label>
           <input
