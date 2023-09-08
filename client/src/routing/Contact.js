@@ -16,8 +16,9 @@ function Contact() {
     });
   };
 
+
   return (
-    <div className="container mt-5 text-dark">
+    <div className="container mt-5 mb-5 pb-5 text-dark">
       <h2>Feedback Form</h2>
       <form action='/onformsubmit' method='post'>
         <div className="form-group">

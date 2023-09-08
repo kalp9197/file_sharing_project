@@ -10,12 +10,12 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-function sendEmail(formData) {
+function sendEmail(formData, email, query) {
   const mailOptions = {
-    from: 'your_email@gmail.com',
-    to: 'pkalp61@gmail.com',
+    from: 'pkalp61@gmail.com',
+    to: email, 
     subject: 'Feedback Form Submission',
-    text: `Name: ${formData.name}\nEmail: ${formData.email}\nQuery: ${formData.query}\nRating: ${formData.rating}`,
+    text: `Name: ${formData.name}\nEmail: ${formData.email}\nQuery: ${query}\nRating: ${formData.rating}`,
   };
 
   transporter.sendMail(mailOptions, (error, info) => {

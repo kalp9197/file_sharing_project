@@ -6,7 +6,7 @@ import { uploadFile } from "../services/api";
 function Home() {
   const [file, setFile] = useState("");
   const [result, setResult] = useState("");
-  const [showDownloadLink, setShowDownloadLink] = useState(false); // State to control the visibility of the download link
+  const [showDownloadLink, setShowDownloadLink] = useState(false); 
   const FileInputRef = useRef();
 
   const on_upload_click = () => {

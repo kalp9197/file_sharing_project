@@ -4,7 +4,7 @@ import '../App.css';
 function Footer() {
   return (
     <>
-  {/* <p className="text-center">&copy; 2023 File Transfering Website All rights reserved.</p> */}
+  <footer className="footer mt-5 pt-5 text-center">&copy; 2023 TransferX All rights reserved.</footer>
     </>
   );
 }
