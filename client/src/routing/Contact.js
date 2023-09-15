@@ -44,7 +44,7 @@ const Contact = () => {
           <label htmlFor="query">Query:</label>
           <textarea
             className="form-control"
-            name="query"
+            name="message"
             rows="4"
             placeholder="Enter your query"
             required
