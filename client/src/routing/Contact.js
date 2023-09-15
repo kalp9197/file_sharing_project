@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
+import Swal from 'sweetalert2';
 
 const Contact = () => {
   const form = useRef();
@@ -10,14 +11,31 @@ const Contact = () => {
     emailjs.sendForm('service_qdszzei', 'template_7cxjbij', form.current, '4PGCka87R1EClPpRx')
       .then((result) => {
           console.log(result.text);
-      }, (error) => {
+
+          // Show success message 
+          Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Your work has been saved',
+            showConfirmButton: false,
+            timer: 1500
+          });
+      })
+      .catch((error) => {
           console.log(error.text);
+
+          // Show error message 
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Something went wrong!',
+            footer: '<a href="">Why do I have this issue?</a>'
+          });
       });
   };
 
   return (
-    <>
-  <div className="container mt-5 mb-5 pb-5 text-dark">
+    <div className="container mt-5 mb-5 pb-5 text-dark">
       <h2>Feedback Form</h2>
       <form ref={form} onSubmit={sendEmail}>
         <div className="form-group">
@@ -56,8 +74,7 @@ const Contact = () => {
         </button>
       </form>
     </div>
-    </>
-  )
-  
+  );
 };
-export default Contact
+
+export default Contact;
