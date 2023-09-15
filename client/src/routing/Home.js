@@ -6,11 +6,23 @@ import { uploadFile } from "../services/api";
 function Home() {
   const [file, setFile] = useState("");
   const [result, setResult] = useState("");
-  const [showDownloadLink, setShowDownloadLink] = useState(false); 
+  const [showDownloadLink, setShowDownloadLink] = useState(false);
+  const [copySuccess, setCopySuccess] = useState(false);
   const FileInputRef = useRef();
 
   const on_upload_click = () => {
     FileInputRef.current.click();
+  };
+
+  const copyToClipboard = () => {
+    const linkToCopy = result;
+    const textArea = document.createElement("textarea");
+    textArea.value = linkToCopy;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand("copy");
+    document.body.removeChild(textArea);
+    setCopySuccess(true);
   };
 
   useEffect(() => {
@@ -48,23 +60,28 @@ function Home() {
           />
         </div>
       </div>
-
       {showDownloadLink && (
-        <div className="bg-dark text-white text-center">
+        <div className="pt-3 pb-3 bg-dark text-white text-center">
           <h3>Your Download Link Is Generated Here</h3>
           <a className="download_link" href={result}>
-            {result}
+            <div>{result}</div>
           </a>
+          <button className="btn btn-outline-success mt-3 mb-2" onClick={copyToClipboard}>
+            Copy to Clipboard
+          </button>
+          {copySuccess && (
+            <div className="text-outline-success">Link copied to clipboard!</div>
+          )}
         </div>
       )}
 
-      <h2 className="pt-5 text-center pb-4">Steps For Easy Share Files </h2>
+      <h2 className="pt-5 text-center pb-4">Steps For Easy Share Files</h2>
       <div className="container">
         <div className="row">
           <div className="col md-4">
             <div
               className="card border-info mb-3"
-              style={{ "max-width": "18rem" }}
+              style={{ maxWidth: "18rem" }}
             >
               <div className="card-header">Step-1</div>
               <div className="card-body">
@@ -77,7 +94,7 @@ function Home() {
           <div className="col md-4">
             <div
               className="card border-info mb-3"
-              style={{ "max-width": "18rem" }}
+              style={{ maxWidth: "18rem" }}
             >
               <div className="card-header">Step-2</div>
               <div className="card-body">
@@ -90,7 +107,7 @@ function Home() {
           <div className="col md-4">
             <div
               className="card border-info mb-3"
-              style={{ "max-width": "18rem" }}
+              style={{ maxWidth: "18rem" }}
             >
               <div className="card-header">Step-3</div>
               <div className="card-body">
