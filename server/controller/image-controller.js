@@ -2,7 +2,7 @@ import File from '../models/file.js';
 import dotenv from 'dotenv';
 
 dotenv.config();
-
+// showing error if not success
 export const uploadImage = async (request, response) => {
     const fileObj = {
         path: request.file.path,
@@ -18,6 +18,7 @@ export const uploadImage = async (request, response) => {
     }
 }
 
+// showing the download count in mongodb cloud
 export const getImage = async (request, response) => {
     try {   
         const file = await File.findById(request.params.fileId);

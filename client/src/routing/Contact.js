@@ -7,7 +7,7 @@ const Contact = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
-
+    // Send feedback over mail logic
     emailjs.sendForm('service_qdszzei', 'template_7cxjbij', form.current, '4PGCka87R1EClPpRx')
       .then((result) => {
           console.log(result.text);
@@ -35,6 +35,7 @@ const Contact = () => {
   };
 
   return (
+    // feedback form
     <div className="container mt-5 mb-5 pb-5 text-dark">
       <h2>Feedback Form</h2>
       <form ref={form} onSubmit={sendEmail}>

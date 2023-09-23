@@ -4,6 +4,7 @@ import '../App.css'
 function Features() {
   return (
     <>
+    {/* Features Page showing functionality of website */}
       <div className="features_lst">
   <h1 className="text-center display-4 mb-5">Features</h1>
   <div className="container">

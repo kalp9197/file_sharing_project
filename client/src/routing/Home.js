@@ -49,6 +49,7 @@ function Home() {
         </h4>
         <h3 className="text-dark text-center pt-4">Select Your file</h3>
         <div className="upload_ctr">
+          {/* Upload Functionality */}
           <button onClick={() => on_upload_click()} className="upload_btn mt-3">
             Upload
           </button>
@@ -60,6 +61,7 @@ function Home() {
           />
         </div>
       </div>
+      {/* Show and Hide Download Link */}
       {showDownloadLink && (
         <div className="pt-3 pb-3 bg-dark text-white text-center">
           <h3>Your Download Link Is Generated Here</h3>
@@ -70,7 +72,7 @@ function Home() {
             Copy to Clipboard
           </button>
           {copySuccess && (
-            <div className="text-outline-success">Link copied to clipboard!</div>
+            <div className="text-secondary">Link copied to clipboard!</div>
           )}
         </div>
       )}
